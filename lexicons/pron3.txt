@@ -1,0 +1,11 @@
+# one word or phrase per line
+he
+she
+him
+her
+they
+them
+his
+hers
+their
+it

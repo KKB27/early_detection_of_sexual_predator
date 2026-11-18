@@ -1,0 +1,14 @@
+# one word or phrase per line
+movie
+movies
+music
+song
+songs
+favorite
+hobby
+hobbies
+sport
+sports
+game
+games
+band

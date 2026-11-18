@@ -1,0 +1,11 @@
+# one word or phrase per line
+mom
+dad
+mother
+father
+parents
+sister
+brother
+divorce
+stepdad
+stepmom

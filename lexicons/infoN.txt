@@ -1,0 +1,14 @@
+# one word or phrase per line
+age
+pic
+pics
+picture
+pictures
+location
+name
+city
+state
+phone
+cam
+webcam
+school

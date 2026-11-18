@@ -1,0 +1,8 @@
+# one word or phrase per line
+boyfriend
+girlfriend
+date
+friend
+friends
+crush
+relationship

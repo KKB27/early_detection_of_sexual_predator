@@ -1,0 +1,11 @@
+# one word or phrase per line
+do
+think
+want
+like
+go
+get
+make
+say
+tell
+know

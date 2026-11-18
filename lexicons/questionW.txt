@@ -1,0 +1,8 @@
+# one word or phrase per line
+who
+what
+when
+where
+why
+how
+which

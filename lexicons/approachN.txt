@@ -1,0 +1,10 @@
+# one word or phrase per line
+car
+hotel
+house
+address
+phone
+number
+ride
+street
+town

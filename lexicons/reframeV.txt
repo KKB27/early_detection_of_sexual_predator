@@ -1,0 +1,5 @@
+# one word or phrase per line
+teach
+practice
+learn
+show

@@ -1,0 +1,33 @@
+Grooming Detection Project - Progress Summary
+
+Completed notebooks
+1. 01_coded_chat_data_loading.ipynb - Parses coded XML chats and creates a message-level table.
+2. 02_coded_chat_exploration.ipynb - Summarizes message counts, stage distributions, and sequence patterns.
+3. 03_overlap_leakage_check.ipynb - Checks exact normalized-text overlap between coded chats and PAN-12.
+4. 04_stage1_baseline.ipynb - Trains and evaluates a grouped-CV TF-IDF/logistic-regression stage classifier.
+5. 05_stage1_lexicon_features.ipynb - Evaluates lexicon features as an incremental Stage 1 signal.
+6. 06_stage1_embeddings.ipynb - Compares sentence-embedding features with the Stage 1 baseline.
+7. 07_stage1_viterbi_smoothing.ipynb - Learns stage transitions and evaluates per-chat sequence smoothing.
+8. 08_stage1_pan12_external_validation.ipynb - Checks Stage 1 predictions against supplied PAN-12 test-line labels; inference is batched to limit memory.
+9. 09_pan12_stage2_features.ipynb - Builds PAN-12 conversation labels and aggregates stage and behavioral features.
+10. 10_stage2_baseline_ablation.ipynb - Compares text-only, stage-only, behavior-only, and combined logistic-regression models.
+11. 11_stage2_lightgbm.ipynb - Compares LightGBM models using stage and behavioral numeric features.
+12. 12_stage2_shap_explanations.ipynb - Produces global and worked-example SHAP explanations.
+13. 13_stage2_final_evaluation.ipynb - Consolidates Stage 2 ablations and calculates test metrics, class-stratified bootstrap intervals, and precision-recall plots.
+14. 14_user_conversation_scoring.ipynb - Scores a sentence or one-message-per-line text file with saved Stage 1 and Stage 2 models, reports stage predictions, and assigns binary red/green review triage.
+
+Key project decisions
+- Stage labels are 200, 600, and 900 from coded chats; uncoded victim messages are not trained as a stage class.
+- The available coded-chat inventory was found to be 56 files.
+- Evaluation splits group messages by conversation for Stage 1; PAN-12 conversation-level splits are used for Stage 2.
+- Stage 2 thresholds are chosen on a training-only validation partition and then held fixed for test evaluation.
+- GPU is not required for the sparse TF-IDF/logistic-regression pipeline; inference is batched to reduce RAM pressure.
+- Notebook outputs are to be preserved when making future changes.
+
+Saved outputs include processed data, trained models, evaluation tables, transition reports, overlap checks, and SHAP importance/worked-example reports under data, models, and reports.
+
+Important limitations
+- PAN-12 does not provide stage labels; its line-level labels are used only for indirect Stage 1 validation.
+- The coded chats provide a small stage-training sample, and PAN-12 reflects dataset-specific decoy-sting dynamics.
+- Model explanations are learned associations, not causal proof. Results are intended to support human review, not make determinations about people.
+- The final scorer's green result means only that both available Stage 2 models are below their saved validation cutoffs; it is not a safety finding. A single sentence or input without speaker labels is not a validated Stage 2 use case.

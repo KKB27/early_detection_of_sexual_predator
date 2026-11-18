@@ -1,0 +1,10 @@
+# one word or phrase per line
+meet
+come
+see
+visit
+pick
+drive
+call
+phone
+ride
